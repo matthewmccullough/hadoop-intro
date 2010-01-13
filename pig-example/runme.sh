@@ -1,0 +1,1 @@
+pig -x local id.pig
