@@ -23,5 +23,5 @@ hadoop jar /Applications/Dev/hadoop-family/hadoop-0.20.1/hadoop-*-examples.jar g
 hadoop fs -cat output/part*
 
 #pull the files local
-hadoop fs -get output output 
-cat output/*
+hadoop fs -get output localoutput
+cat localoutput/*
