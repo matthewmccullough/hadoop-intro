@@ -6,14 +6,18 @@ hadoop namenode -format
 
 #Import data
 #Usage: hadoop fs -put <localsrc> ... <dst>
-hadoop fs -rmr input
-hadoop fs -put localinput input
+hadoop fs -rmr remoteinput
+
+#Upload files
+hadoop fs -mkdir remoteinput
+hadoop fs -put localinput/*xml* remoteinput
 
 #Check if the files are there
-hadoop fs -lsr input
+hadoop fs -lsr remoteinput
 
 #Run the grep on all the files in localinput
-hadoop jar /Applications/Dev/hadoop-family/hadoop-0.20.1/hadoop-*-examples.jar grep input/* output 'dfs[a-z.]+'
+hadoop fs -mkdir output 
+hadoop jar /Applications/Dev/hadoop-family/hadoop-0.20.1/hadoop-*-examples.jar grep remoteinput output 'dfs[a-z.]+'
 
 #Look at the files remotely
 hadoop fs -cat output/part*
