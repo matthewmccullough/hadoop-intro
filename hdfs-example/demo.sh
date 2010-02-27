@@ -1,4 +1,9 @@
+#Remove the last run's output dir
 rm -rf output
+rm -rf localoutput
+#Remove the local equiv to the remote input
+rm -rf remoteinput
+rm -rf remoteoutput
 
 #Format the filesystem
 hadoop namenode -format
@@ -26,4 +31,4 @@ hadoop fs -cat output/part*
 
 #pull the files local
 hadoop fs -get output localoutput
-cat localoutput/output/*
+cat localoutput/*
