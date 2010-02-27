@@ -37,8 +37,8 @@ hbase>
 help
 create "mylittletable", "mylittlecolumnfamily"
 describe "mylittletable"
-put "mylittletable", "x"
-put 'mylittletable', 'r2', 'mylittlecolumnfamily', 'x'
+//put "mylittletable", "x"
+put "mylittletable", "r2", "mylittlecolumnfamily", "x"
 get "mylittletable", "x"
 scan "mylittletable"
 
