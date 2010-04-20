@@ -1,2 +1,2 @@
-rm id.out
-pig -x local id.pig
+rm names.out
+pig -x local get-names-from-people.pig
