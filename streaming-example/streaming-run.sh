@@ -1,0 +1,1 @@
+hadoop jar /Applications/Dev/hadoop-family/hadoop-0.20.1/contrib/streaming/hadoop-0.20.1-streaming.jar -input 2010StateOfTheUnion.txt -output output -mapper 'cut -f 2 -d ,' -reducer 'uniq'
