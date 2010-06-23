@@ -32,7 +32,7 @@ tail -f *
 ##Map Reduce
 
 ### Format the HDFS File System
-hadoop fs -format
+hadoop namenode -format
 
 ### Reset the processing (delete old files)
 hadoop fs -rmr shakes*
@@ -58,16 +58,35 @@ hadoop fsck -racks
 
 
 ## HBase
+start-hbase.sh
+hbase shell
+create 'blogposts', 'post', 'image'
+
+put ‘blogposts’, ‘post1′, ‘post:title’, ‘Hello World’
+put ‘blogposts’, ‘post1′, ‘post:author’, ‘The Author’
+put ‘blogposts’, ‘post1′, ‘post:body’, ‘This is a blog post’
+put ‘blogposts’, ‘post1′, ‘image:header’, ‘image1.jpg’
+put ‘blogposts’, ‘post1′, ‘image:bodyimage’, ‘image2.jpg’
+
+get ‘blogposts’, ‘post1′
 
 
 ##Pig
 pig
 
 A = load 'shakespeare_freq/part-00000' using PigStorage('\t') AS (rawcount:int, rawword: chararray); 
+explain A;
+
 B = foreach A generate $1 as word, $0 as count;
 C = ORDER B BY count ASC;
+
+illustrate C;
+
 dump C;
 store C into 'shakespeare_words.output';
+
+Y = LIMIT C 5;
+dump Y;
 
 quit;
 
