@@ -2,40 +2,45 @@
 
 ## Install Hadoop and Subprojects
 Download core binaries:
-http://hadoop.apache.org/common/releases.html
-http://www.apache.org/dyn/closer.cgi/hadoop/core/
-http://mirror.cc.columbia.edu/pub/software/apache/hadoop/core/hadoop-0.20.2/
-
+    http://hadoop.apache.org/common/releases.html
+    http://www.apache.org/dyn/closer.cgi/hadoop/core/
+    http://mirror.cc.columbia.edu/pub/software/apache/hadoop/core/hadoop-0.20.2/
+    
 Download ancillary projects (Pig, Hive, HBase, Zookeeper, Avro, Chukwa):
-http://mirror.cc.columbia.edu/pub/software/apache/hadoop/
+    http://mirror.cc.columbia.edu/pub/software/apache/hadoop/
 
 ### Cloudera's VMWare Image
-http://www.cloudera.com/developers/downloads/virtual-machine/
-http://cloudera-vm.s3.amazonaws.com/cloudera-training-0.3.3.tar.bz2
+    http://www.cloudera.com/developers/downloads/virtual-machine/
+    http://cloudera-vm.s3.amazonaws.com/cloudera-training-0.3.3.tar.bz2
 
 ### VMWare Player, Fusion
-http://www.vmware.com/download/player/
+    http://www.vmware.com/download/player/
 
 
 ## Examine input files
-cd /home/training/git/data/input
-tail -1000 all-shakespeare
+    cd /home/training/git/data/input
+    tail -1000 all-shakespeare
 
 
 ## Tail Hadoop Logs
 * Open a separate terminal window
 
-cd /usr/lib/hadoop-0.20/logs
-tail -f *
+    cd /usr/lib/hadoop-0.20/logs
+    tail -f *
+
+## Format the HDFS File System
+    hadoop namenode -format
 
 
 ##Map Reduce
 
-### Format the HDFS File System
-hadoop namenode -format
+### Calculate Pi
+    hadoop jar hadoop-0.20.1-examples.jar pi 4 1000
+
+    http://code.google.com/edu/parallel/tools/hadoopvm/index.html
 
 ### Reset the processing (delete old files)
-hadoop fs -rmr shakes*
+    hadoop fs -rmr shakes*
 
 ### Parse all of Shakespeare's works
 * Grep yields unsorted output
@@ -62,13 +67,13 @@ start-hbase.sh
 hbase shell
 create 'blogposts', 'post', 'image'
 
-put ‘blogposts’, ‘post1′, ‘post:title’, ‘Hello World’
-put ‘blogposts’, ‘post1′, ‘post:author’, ‘The Author’
-put ‘blogposts’, ‘post1′, ‘post:body’, ‘This is a blog post’
-put ‘blogposts’, ‘post1′, ‘image:header’, ‘image1.jpg’
-put ‘blogposts’, ‘post1′, ‘image:bodyimage’, ‘image2.jpg’
+put 'blogposts', 'post1', 'post:title', 'Hello World'
+put 'blogposts', 'post1', 'post:author', 'The Author'
+put 'blogposts', 'post1', 'post:body', 'This is a blog post'
+put 'blogposts', 'post1', 'image:header', 'image1.jpg'
+put 'blogposts', 'post1', 'image:bodyimage', 'image2.jpg'
 
-get ‘blogposts’, ‘post1′
+get 'blogposts', 'post1'
 
 
 ##Pig
