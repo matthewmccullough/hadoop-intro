@@ -99,28 +99,28 @@ hadoop fs -cat shakespeare_words.output/part-00000
 
 
 ##Hive
-hive
+    hive
+
 ### Clean up logs
-hadoop fs -rmr shakespeare_freq/_logs
+    hadoop fs -rmr shakespeare_freq/_logs
 
-SHOW TABLES;
-CREATE TABLE shakespeare (freq INT, word STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE;
-DESCRIBE shakespeare;
+    SHOW TABLES;
+    CREATE TABLE shakespeare (freq INT, word STRING) ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t' STORED AS TEXTFILE;
+    DESCRIBE shakespeare;
 
-LOAD DATA INPATH "shakespeare_freq" INTO TABLE shakespeare;
-
-SELECT * FROM shakespeare LIMIT 10;
-
-SELECT * FROM shakespeare WHERE freq > 100 SORT BY freq ASC LIMIT 10;
-exit;
+    LOAD DATA INPATH "shakespeare_freq" INTO TABLE shakespeare;
+    
+    SELECT * FROM shakespeare LIMIT 10;
+    
+    SELECT * FROM shakespeare WHERE freq > 100 SORT BY freq ASC LIMIT 10;
+    exit;
 
 
 ## Configuring Hadoop
-cd /usr/lib/hadoop-0.20/conf
+    cd /usr/lib/hadoop-0.20/conf
 
 
 ## Managing Hadoop
-
-cd /usr/lib/hadoop-0.20/bin
-sudo -u hadoop start-all.sh
-sudo -u hadoop stop-all.sh
+    cd /usr/lib/hadoop-0.20/bin
+    sudo -u hadoop start-all.sh
+    sudo -u hadoop stop-all.sh

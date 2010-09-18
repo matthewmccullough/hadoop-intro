@@ -1,0 +1,9 @@
+terminal.sh /Users/mccm06/Documents/Teach/Courses/Hadoop/sample-data
+sleep 1
+terminal.sh /Applications/Dev/hadoop-family/hbase-0.20.2/bin
+sleep 1
+terminal.sh /Applications/Dev/hadoop-family/hadoop-0.20.1/bin
+sleep 1
+terminal.sh /Applications/Dev/hadoop-family/hadoop-0.20.1/logs
+sleep 1
+terminal.sh /Applications/Dev/hadoop-family/hadoop-0.20.1/conf
