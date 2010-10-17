@@ -6,7 +6,7 @@ Download core binaries:
 
     http://hadoop.apache.org/common/releases.html
     http://www.apache.org/dyn/closer.cgi/hadoop/core/
-        http://mirror.cc.columbia.edu/pub/software/apache/hadoop/core/hadoop-0.20.2/
+    http://mirror.cc.columbia.edu/pub/software/apache/hadoop/core/hadoop-0.20.2/
     
 Download ancillary projects (Pig, Hive, HBase, Zookeeper, Avro, Chukwa):
 
@@ -52,14 +52,14 @@ Open a separate terminal window
     hadoop jar $HADOOP_HOME/hadoop*examples.jar
 
 ### Calculate Pi
-    hadoop jar hadoop-*-examples.jar pi 4 1000
+    hadoop jar $HADOOP_HOME/hadoop-*-examples.jar pi 6 5000
     
 Look at the source code for Pi
 
     http://code.google.com/edu/parallel/tools/hadoopvm/index.html
     
 ### Word Count
-    hadoop jar $HADOOP_HOME/hadoop*examples.jar wordcount thrillers.txt wordcountoutput
+    hadoop jar $HADOOP_HOME/hadoop*examples.jar wordcount thriller.txt wordcountoutput
     
 ### Parse all of Shakespeare's works
 Grep yields unsorted output
