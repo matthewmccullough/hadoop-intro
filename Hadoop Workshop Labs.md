@@ -1,12 +1,15 @@
 #Hadoop Workshop Student Guide
+This is a guide to the exercises Matthew executes during his Hadoop training sessions. Once Hadoop is set up, most of the commands can be run in any order. The only over-arching requirement is that the Shakespeare files have been MapReduced, as they are used as inputs to other Pig and Hive processes.
 
 ## Install Hadoop and Subprojects
 Download core binaries:
+
     http://hadoop.apache.org/common/releases.html
     http://www.apache.org/dyn/closer.cgi/hadoop/core/
-    http://mirror.cc.columbia.edu/pub/software/apache/hadoop/core/hadoop-0.20.2/
+        http://mirror.cc.columbia.edu/pub/software/apache/hadoop/core/hadoop-0.20.2/
     
 Download ancillary projects (Pig, Hive, HBase, Zookeeper, Avro, Chukwa):
+
     http://mirror.cc.columbia.edu/pub/software/apache/hadoop/
 
 ### Cloudera's VMWare Image
@@ -24,7 +27,7 @@ Download ancillary projects (Pig, Hive, HBase, Zookeeper, Avro, Chukwa):
     tail -1000 all-shakespeare
 
 ## Tail Hadoop Logs
-* Open a separate terminal window
+Open a separate terminal window
 
     cd /usr/lib/hadoop-0.20/logs
     tail -f *
@@ -66,11 +69,11 @@ Grep yields unsorted output
     hadoop jar $HADOOP_HOME/hadoop*examples.jar grep thriller.txt grepoutputdir '\w+'
 
 ### Examine the file
-hadoop fs -lsr shakespeare_freq/*
-hadoop fs -cat shakespeare_freq/part-00000 | more
+    hadoop fs -lsr shakespeare_freq/*
+    hadoop fs -cat shakespeare_freq/part-00000 | more
 
 ### Examine the job logs
-hadoop fs -cat shakespeare_freq/_logs/history/* | more
+    hadoop fs -cat shakespeare_freq/_logs/history/* | more
 
 
 ## Streaming
